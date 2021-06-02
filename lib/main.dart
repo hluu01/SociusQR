@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'QRcode scanner'),
+      home: MyHomePage(title: 'SociusQR'),
     );
   }
 }
@@ -27,7 +27,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,14 +34,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: ElevatedButton(
-            child: Text('Scan'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Scanner()),
-              );
-            }),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ElevatedButton(
+              child: Text(
+                'Scan',
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Scanner()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(10.0),
+                minimumSize: Size(20.0, 10.0),
+              ),
+            ),
+            ElevatedButton(
+              child: Text("Generate QR Code"),
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text("Store social medias"),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
