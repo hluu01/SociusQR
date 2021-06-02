@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'scanner.dart';
+import 'storeInfo.dart';
 
 void main() {
   runApp(MyApp());
@@ -59,7 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               child: Text("Store social medias"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => storeInfo()),
+                );
+              },
             ),
           ],
         ),
