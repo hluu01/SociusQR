@@ -41,11 +41,8 @@ class _storeInfoState extends State<storeInfo> {
 
   void saveData(String value) async {
 
-    // ignore: invalid_use_of_visible_for_testing_member
-    SharedPreferences.setMockInitialValues({});
-
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('Key', value);
+    prefs.setString('key', value);
 
     Fluttertoast.showToast(msg: 'Saved data :)', toastLength: Toast.LENGTH_SHORT);
 

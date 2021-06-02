@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qrcode/generateQR.dart';
 import 'scanner.dart';
 import 'storeInfo.dart';
+import 'generateQR.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ElevatedButton(
-              child: Text(
-                'Scan',
-              ),
+              child: Text('Scan',),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -56,7 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               child: Text("Generate QR Code"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => generateQR()),
+                );
+              },
             ),
             ElevatedButton(
               child: Text("Store social medias"),
